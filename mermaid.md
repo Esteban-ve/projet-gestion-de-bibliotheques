@@ -1,18 +1,20 @@
 ```mermaid
 classDiagram
-    Animal <|-- Duck
-    Animal <|-- Fish
-    Animal <|-- Zebra
-    Animal : +int age
-    Animal : +String gender
-    Animal: +isMammal()
-    Animal: +mate()
-    class Duck{
+    blibliotheque <|-- Livre
+    blibliotheque <|-- Adherent
+    blibliotheque <|-- Zebra
+    blibliotheque : +string nom
+    blibliotheque : +string adresse
+    blibliotheque : +int code
+    blibliotheque : +List~int list_livres
+
+    blibliotheque: +mate()
+    class Livre{
       +String beakColor
       +swim()
       +quack()
     }
-    class Fish{
+    class Adherent{
       -int sizeInFeet
       -canEat()
     }
