@@ -10,9 +10,9 @@ classDiagram
     Livre ..|> Bande_dessinee
 
     class blibliotheque{
-    +string: nom
-    +string: adresse
-    +int code
+    +string nom
+    #string adresse
+    #int code
     +List~int list_livres
 
     +acheter_livre()
@@ -23,15 +23,47 @@ classDiagram
     
     }
 
-    class Livre{
-      +String beakColor 
-      +swim()
-      +quack()
-    }
     class Adherent{
       -int sizeInFeet
       -canEat()
     }
+
+    class Livre{
+      -int code
+      -int isbn
+      -string auteur
+      -string titre
+      -string editeur
+      -string public
+
+      -bool libre
+      -bool emprunte
+      -bool prete
+
+      +livre(int code, int isbn, )
+      +quack()
+    }
+
+    class Album{
+    -string illustration
+    }
+
+    class Theatre{
+    -int siecle
+    }
+
+    class Roman{
+    -string genre
+    }
+
+    class Poesie{
+    -string indicateur
+    }
+
+    class Bande_dessinee{
+    -string dessinateur
+    }
+
 
 
 ```
