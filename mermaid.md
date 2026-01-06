@@ -1,16 +1,30 @@
 ```mermaid
 classDiagram
-    blibliotheque <|-- Livre
-    blibliotheque <|-- Adherent
-    blibliotheque <|-- Zebra
-    blibliotheque : +string nom
-    blibliotheque : +string adresse
-    blibliotheque : +int code
-    blibliotheque : +List~int list_livres
+    blibliotheque ..> Livre
+    blibliotheque ..> Adherent
 
-    blibliotheque: +mate()
+    Livre ..|> Album
+    Livre ..|> Theatre
+    Livre ..|> Roman
+    Livre ..|> Poesie
+    Livre ..|> Bande_dessinee
+
+    class blibliotheque{
+    +string: nom
+    +string: adresse
+    +int code
+    +List~int list_livres
+
+    +acheter_livre()
+    +detruire_livre()
+    +afficher_livre()
+    +emprunter_livre()
+    +rendre_livre()
+    
+    }
+
     class Livre{
-      +String beakColor
+      +String beakColor 
       +swim()
       +quack()
     }
@@ -18,9 +32,6 @@ classDiagram
       -int sizeInFeet
       -canEat()
     }
-    class Zebra{
-      +bool is_wild
-      +run()
-    }
+
 
 ```
