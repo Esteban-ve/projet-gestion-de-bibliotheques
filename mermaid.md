@@ -117,7 +117,5 @@ classDiagram
 
     +bance_dessinee(int code, int isbn,  string auteur, string titre, string editeur, string public, bool libre, bool prete, string bibliotheque_d_origine, string dessinateur): void
     }
-
-
-
+    
 ```
