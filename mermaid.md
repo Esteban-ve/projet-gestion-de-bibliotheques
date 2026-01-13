@@ -24,12 +24,7 @@ classDiagram
     }
 
     class Adherent{
-      +string nom
-      +string prenom
-      +string adresse
-      +int numero_adherent
-      +string bibliotheque_referente
-      +List~Livre 
+      -int sizeInFeet
       -canEat()
     }
 
@@ -68,7 +63,5 @@ classDiagram
     class Bande_dessinee{
     -string dessinateur
     }
-
-
-
+    
 ```
