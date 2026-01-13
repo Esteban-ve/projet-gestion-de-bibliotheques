@@ -10,10 +10,10 @@ classDiagram
     Livre ..|> Bande_dessinee
 
     class blibliotheque{
-    +string nom
-    #string adresse
-    #int code
-    +List~int list_livres
+    -string nom
+    -string adresse
+    -int code
+    -List~int list_livres
 
     +acheter_livre(livre livre): void
     +detruire_livre(livre livre):void
@@ -35,13 +35,12 @@ classDiagram
     }
 
     class Adherent{
-      +string nom
-      +string prenom
-      +string adresse
-      +int numero_adherent
-      +string bibliotheque_d_inscription
-      +List~Livre 
-      +int nombre_livre_autorise
+      -string nom
+      -string prenom
+      -string adresse
+      -int numero_adherent
+      -string bibliotheque_d_inscription
+      -List~Livre 
     }
 
     class Livre{
@@ -50,7 +49,7 @@ classDiagram
       -string auteur
       -string titre
       -string editeur
-      -string public
+      -string publique
       -bool libre
       -bool prete
       -string bibliotheque_d_origine
@@ -75,7 +74,7 @@ classDiagram
       +set_prete(bool): void
       +set_bibliotheque_d_origine(string): void
 
-      #livre(int code, int isbn, string auteur, string titre, string editeur, string public, bool libre, bool prete, string bibliotheque_d_origine):void
+      #livre(int code, int isbn, string auteur, string titre, string editeur, string publique, bool libre, bool prete, string bibliotheque_d_origine):void
     }
 
     class Album{
