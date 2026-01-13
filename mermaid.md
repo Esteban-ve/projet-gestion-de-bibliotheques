@@ -21,8 +21,6 @@ classDiagram
     +emprunter_livre(livre livre):void
     +rendre_livre():void
 
-    +bibliotheque(string nom, string adresse, int code, List~int list_livres):void
-
     +get_nom(): string
     +get_adresse(): string
     +get_code(): int
@@ -32,6 +30,8 @@ classDiagram
     +set_adresse(string): void
     +set_code(int): void
     +set_list_livre(List~livre): void
+
+    +bibliotheque(string nom, string adresse, int code, List~int list_livres):void
     }
 
     class Adherent{
@@ -75,7 +75,7 @@ classDiagram
       +set_prete(bool): void
       +set_bibliotheque_d_origine(string): void
 
-      #livre(int code, int isbn, ):void
+      #livre(int code, int isbn, string auteur, string titre, string editeur, string public, bool libre, bool prete, string bibliotheque_d_origine):void
     }
 
     class Album{
@@ -83,7 +83,7 @@ classDiagram
     +get_illustration(): string
     +set_illustration(string): void
 
-    +album(int code, int isbn, string auteur, string titre, string editeur, string public, bool libre, bool prete, string bibliotheque_d_origine, string illustration): void
+    +album( livre livre, string illustration): void
     }
 
     class Theatre{
@@ -91,7 +91,7 @@ classDiagram
     +get_siecle(): int
     +set_siecle(int siecle): void
 
-    +theatre(int code, int isbn, string auteur, string titre, string editeur, string public, bool libre, bool prete, string bibliotheque_d_origine): void
+    +theatre(livre livre, int siecle): void
     }
 
     class Roman{
@@ -99,7 +99,7 @@ classDiagram
     +get_genre(): string
     +set_genre(string genre): void
 
-    +roman(int code, int isbn, string auteur, string titre, string editeur, string public, bool libre, bool prete, string bibliotheque_d_origine, string genre): void
+    +roman(livre livre, string genre): void
     }
 
     class Poesie{
@@ -107,7 +107,7 @@ classDiagram
     +get_indicateur(): string
     +set_indicateur(string indicateur): void
 
-    +poesie(int code, int isbn, string auteur, string titre, string editeur, string public, bool libre, bool prete, string bibliotheque_d_origine, string indicateur): void
+    +poesie(livre livre, string indicateur): void
     }
 
     class Bande_dessinee{
@@ -115,7 +115,7 @@ classDiagram
     +get_dessinateur(): string
     +set_dessinateur(string dessinateur): void
 
-    +bance_dessinee(int code, int isbn,  string auteur, string titre, string editeur, string public, bool libre, bool prete, string bibliotheque_d_origine, string dessinateur): void
+    +bance_dessinee(livre livre, string dessinateur): void
     }
     
 ```
