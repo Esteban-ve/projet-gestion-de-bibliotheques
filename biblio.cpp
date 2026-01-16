@@ -1,19 +1,17 @@
 #include "biblio.h"
 #include <iostream>
 #include <string> // pour utiliser le type string
+#include <list>
+
 // Constructeurs (Rem.: TOUS les constructeurs d'une classe doivent avoir le même nom que celui de la classe)
 
-biblio :: (int a, int b, int c) {
+biblio :: (string name, stirng ad, int c, list<livre> L) {
     this-> x = a;
     this-> y = b;
     this-> z = c;
 }
 
-point :: point() {
-    this-> x = 0;
-    this-> y = 0;
-    this-> z = 0;
-}
+
 
 point :: point(const point& p) {
     this-> x = p.x;

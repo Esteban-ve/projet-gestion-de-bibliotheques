@@ -1,12 +1,16 @@
 #ifndef BIBLIO_H
 #define BIBLIO_H
 #include <string>
+#include <iostream>
+#include <list>
+using namespace std;
 
 class biblio {   // !! Rem.: à la fin de la définition d'une classe il faut mettre ';' !!
     private:    // Attributs
         string nom;
-        stirng y;
-        int z;
+        string adresse;
+        int code;
+        list<livre> list_livres;
 
     public:
         // Constructeurs (Rem.: TOUS les constructeurs d'une classe doivent avoir le même nom que celui de la classe)
