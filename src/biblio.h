@@ -2,7 +2,6 @@
 #define BIBLIO_H
 #include <string>
 #include <iostream>
-#include <list>
 using namespace std;
 
 class biblio {   // !! Rem.: à la fin de la définition d'une classe il faut mettre ';' !!
@@ -10,7 +9,9 @@ class biblio {   // !! Rem.: à la fin de la définition d'une classe il faut me
         string nom;
         string adresse;
         int code;
-        char [] liste_livres;
+        char liste_livres[][];     // on a une chaine de caracteres dynamique qui 
+                                   // va contenir les titres des livres (qui sont des 'string') dans les bibliothèques, 
+                                   // le premier '[]' représente le nb de livres, et le deuxième '[]' resprésente la taille max des titres 
 
     public:
         // Constructeurs (Rem.: TOUS les constructeurs d'une classe doivent avoir le même nom que celui de la classe)
