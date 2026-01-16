@@ -13,7 +13,7 @@ classDiagram
     -string nom
     -string adresse
     -int code
-    -List~int list_livres
+    -list<livre> list_livres
 
     +acheter_livre(livre livre): void
     +detruire_livre(livre livre):void
