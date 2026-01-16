@@ -7,7 +7,9 @@ using namespace std;
 class livre {
 protected:
     // Constructeurs
-    livre(int code ,int isbn, string auteur, string titre, string editeur, string publique, bool libre, bool prete, string bibliotheque_d_origine);
+    livre(int code ,int isbn, string auteur, string titre, 
+        string editeur, string publique, bool libre, bool prete,
+        string bibliotheque_d_origine);
 
 private:
     int code;

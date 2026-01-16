@@ -10,7 +10,7 @@ class biblio {   // !! Rem.: à la fin de la définition d'une classe il faut me
         string nom;
         string adresse;
         int code;
-        list<livre> list_livres;
+        char [] liste_livres;
 
     public:
         // Constructeurs (Rem.: TOUS les constructeurs d'une classe doivent avoir le même nom que celui de la classe)
