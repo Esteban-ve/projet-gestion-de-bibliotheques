@@ -1,35 +1,39 @@
-#ifndef BIBLIO_H
+#ifndef BIBLIO_H   // corrigé
 #define BIBLIO_H
+
 #include <string>
-#include <iostream>
+#include "livre.h"
 using namespace std;
 
-class biblio {   // !! Rem.: à la fin de la définition d'une classe il faut mettre ';' !!
-    private:    // Attributs
-        string nom;
-        string adresse;
-        int code;
-        char liste_livres[][];     // on a une chaine de caracteres dynamique qui 
-                                   // va contenir les titres des livres (qui sont des 'string') dans les bibliothèques, 
-                                   // le premier '[]' représente le nb de livres, et le deuxième '[]' resprésente la taille max des titres 
+const int MAX_LIVRES = 5;
 
-    public:
-        // Constructeurs (Rem.: TOUS les constructeurs d'une classe doivent avoir le même nom que celui de la classe)
-        point(int a, int b, int c); // constructeur 'classique'
-        point();    // constructeur par défaut
-        point(const point& p); // contructeur recopie
-        
-        
-        // Getters
-        int getX() const;
-        int getY() const;
-        int getZ() const;
+class Bibliotheque {
+private:
+    string nom;
+    string adresse;
+    int code;
+    livre* list_livres[MAX_LIVRES];
+    int nb_livres;
 
-        // Setters
-        void setX(int X);
-        void setY(int Y);
-        void setZ(int Z);
-    protected : 
-};  // le ';' à mettre à la fin de 'class'
+public:
+    Bibliotheque(string nom, string adresse, int code);
 
-#endif 
+    // Getters
+    string get_nom() const;
+    string get_adresse() const;
+    int get_code() const;
+    int get_nb_livres() const;
+    livre* get_livre(int index) const;
+
+    // Setters
+    void set_nom(const string& nom);
+    void set_adresse(const string& adresse);
+    void set_code(int code);
+
+    // Méthodes
+    void acheter_livre(livre* l);
+    void detruire_livre(livre* l);
+    void afficher_livres() const;
+};
+
+#endif

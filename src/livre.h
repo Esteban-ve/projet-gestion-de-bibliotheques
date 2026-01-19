@@ -6,12 +6,6 @@ using namespace std;
 
 class livre {
 protected:
-    // Constructeurs
-    livre(int code ,int isbn, string auteur, string titre, 
-        string editeur, string publique, bool libre, bool prete,
-        string bibliotheque_d_origine);
-
-private:
     int code;
     int isbn;
     string auteur;
@@ -22,7 +16,15 @@ private:
     bool prete;
     string bibliotheque_d_origine;
 
+    void afficher_infos() const; // la méthode afficher est protected pour être sur que les classes filles doivent en changer
+
 public:
+
+    livre(int code ,int isbn, string auteur, string titre, string editeur, string publique, bool libre, bool prete, string bibliotheque_d_origine);
+    
+    virtual ~livre() = default; // le destructeur
+    virtual void afficher() const; // la version écrasable de l'affichage des livres
+
     // les getters
 
     int get_code() const;
