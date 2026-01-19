@@ -3,8 +3,8 @@
 using namespace std;    
 
 // Constructeur
-Theatre::Theatre(const livre& livreoriginale, int siecle)
-    : livre(livreoriginale) // le constructeur de livre original (par copie)
+Theatre::Theatre(int code ,int isbn, string auteur, string titre, string editeur, string publique, bool libre, bool prete, string bibliotheque_d_origine, int siecle)
+    : livre(code, isbn, auteur, titre, editeur, publique, libre, prete, bibliotheque_d_origine)
 {
     this->siecle = siecle;
 }

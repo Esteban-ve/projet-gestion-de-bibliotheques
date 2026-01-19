@@ -1,4 +1,4 @@
-#include "Biblio.h"
+#include "Bibliotheque.h"
 #include <iostream>
 
 Bibliotheque::Bibliotheque(string n, string a, int c)

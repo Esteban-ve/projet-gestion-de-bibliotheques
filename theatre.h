@@ -10,7 +10,7 @@ protected:
 
 public:
     // Constructeur
-    Theatre(const livre& livreBase, int siecle);
+    Theatre(int code ,int isbn, string auteur, string titre, string editeur, string publique, bool libre, bool prete, string bibliotheque_d_origine, int siecle);
 
     //Méthode
     void afficher() const override;

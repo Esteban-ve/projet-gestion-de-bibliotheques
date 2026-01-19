@@ -1,5 +1,5 @@
-#ifndef BIBLIO_H   // corrigé
-#define BIBLIO_H
+#ifndef BIBLIOTHEQUE_H   // corrigé
+#define BIBLIOTHEQUE_H
 
 #include <string>
 #include "livre.h"
