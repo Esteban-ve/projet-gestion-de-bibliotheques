@@ -44,7 +44,7 @@ int main() {
     // l'adhérent1 emprunte des livres
     adherent1.emprunter_livre(album1);
     adherent1.emprunter_livre(roman1);
-    
+
     // on vérifie que les livres ne sont plus dans la bibliothèque 
     bibliotheque_de_centrale.afficher_livres();
 
@@ -59,7 +59,23 @@ int main() {
     bibliotheque_de_centrale.detruire_livre(roman1); // on le considère perdu
 
     // emprunt du livre biblios
-    biblio1->emprunter_livre(1, *biblio3);
+    bibliotheque_cannebiere.emprunter_livre_global(1, liste_biblios, 3);
+
+    // Le livre 4 (poesie1) est dans bibliotheque_de_centrale
+    // On va tenter de l'emprunter depuis la bibliothèque Saint Charles
+    bibliotheque_saint_charles.emprunter_livre_global(4, liste_biblios, 3);
+
+    // on vérifie les livres présents
+    cout << "\nLivres dans Centrale :\n";
+    bibliotheque_de_centrale.afficher_livres();
+
+    cout << "\nLivres dans Saint Charles :\n";
+    bibliotheque_saint_charles.afficher_livres();
+
+
+
+
+
 
     return 0;
 }

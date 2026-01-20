@@ -108,11 +108,11 @@ bool Bibliotheque::emprunter_livre(int code_livre, Bibliotheque& autre)
 
 bool Bibliotheque::emprunter_livre_global(int code_livre, Bibliotheque* biblios[], int nb_biblios)
 {
-    bool trouve = false;
-    Bibliotheque* source;   // pas initialisé à nullptr
-    livre* l;               // idem
+    bool trouve = false; // pour savoir si on a enfin trouvé le livre
+    Bibliotheque* source;  // la bibliotheque dans laquelle on a trouvé
+    livre* l;               // le fameux livre 
 
-    // 1) On cherche dans toutes les bibliothèques
+    // On cherche dans toutes les bibliothèques
     for (int i = 0; i < nb_biblios; i++) {
         l = biblios[i]->get_livre(code_livre);
         if (l) {
@@ -127,17 +127,17 @@ bool Bibliotheque::emprunter_livre_global(int code_livre, Bibliotheque* biblios[
         return false;
     }
 
-    // 2) Vérifier s'il est disponible
+    //On vérifie s'il est dispo
     if (!l->get_libre()) {
         cout << "Livre trouvé mais déjà emprunté." << endl;
         return false;
     }
 
-    // 3) Marquer comme emprunté
+    // on marque le livre comme emprunté
     l->set_libre(false);
     l->set_prete(true);
 
-    // 4) Retirer de la bibliothèque source
+    // on retire le livre de la bibliothèque source
     int index = -1;
     for (int i = 0; i < source->nb_livres; i++) {
         if (source->list_livres[i] == l) {
@@ -151,7 +151,7 @@ bool Bibliotheque::emprunter_livre_global(int code_livre, Bibliotheque* biblios[
 
     source->nb_livres--;
 
-    // 5) Ajouter à celle-ci (this)
+    // on ajoute le livre à celle-ci (this)
     this->ajouter_livre(l, *source);
 
     cout << "Livre \"" << l->get_titre() << "\" transféré depuis "
