@@ -36,7 +36,6 @@ public:
     void detruire_livre(livre* l);
     void afficher_livres() const;
     bool emprunter_livre(int code_livre, Bibliotheque& autre);
-    bool emprunter_livre_global(int code_livre, Bibliotheque* biblios[], int nb_biblios);
 
 };
 

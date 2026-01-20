@@ -17,9 +17,6 @@ int main() {
     Bibliotheque bibliotheque_cannebiere("Bibliothèque de Cannebiere", "50 Bd Cannebiere", 2);
     Bibliotheque bibliotheque_saint_charles("Bibliothèque Saint Charles", "234 Bd Saint Charles", 2);
     
-    // tableau statique des bibliothèques, dont on aura besoin pour faire les emprunts de livre entre bibliothèques
-    Bibliotheque* liste_biblios[3] = { bibliotheque_de_centrale*, bibliotheque_cannebiere*, bibliotheque_saint_charles* };
-
     // Création des livres
     Album* album1 = new Album(1, 26271, "Antoine de Saint-Exupéry", "Le Petit Prince", "Gallimard", "Tout public", true, false, "Bibliothèque de Centrale", "des illustrations");
     Theatre* theatre1 = new Theatre(2, 368222, "Molière", "Le Malade imaginaire", "Flammarion", "Tout public", true, false, "Bibliothèque de Centrale", 17);
@@ -58,24 +55,24 @@ int main() {
     bibliotheque_de_centrale.detruire_livre(theatre1); // on l'aime plus
     bibliotheque_de_centrale.detruire_livre(roman1); // on le considère perdu
 
-    // emprunt du livre biblios
-    bibliotheque_cannebiere.emprunter_livre_global(1, liste_biblios, 3);
+    // L'adhérent rend un livre
+    adherent1.rendre_livre(album1);
 
-    // Le livre 4 (poesie1) est dans bibliotheque_de_centrale
-    // On va tenter de l'emprunter depuis la bibliothèque Saint Charles
-    bibliotheque_saint_charles.emprunter_livre_global(4, liste_biblios, 3);
-
-    // on vérifie les livres présents
-    cout << "\nLivres dans Centrale :\n";
+    // On réaffiche les livres dans la bibliothèque
     bibliotheque_de_centrale.afficher_livres();
 
-    cout << "\nLivres dans Saint Charles :\n";
+    // Suppression
+    bibliotheque_de_centrale.detruire_livre(theatre1); // on l'aime plus
+    bibliotheque_de_centrale.detruire_livre(roman1);   // on le considère perdu
+
+    // On vérifie les livres présents
+    cout << "\n Inventaire final des livres de la Centrale \n";
+    bibliotheque_de_centrale.afficher_livres();
+
+    cout << "\n Inventaire final des livres de Saint Charles \n";
     bibliotheque_saint_charles.afficher_livres();
 
-
-
-
-
+    cout << "\n Fin du main\n";
 
     return 0;
 }
