@@ -14,19 +14,23 @@ class Bibliotheque {
     - string adresse
     - int code
     - List list_livres
+
     + acheter_livre(livre)
     + detruire_livre(livre)
     + afficher_livre()
     + emprunter_livre(livre)
     + rendre_livre()
+
     + get_nom()
     + get_adresse()
     + get_code()
     + get_livre(int index)
+
     + set_nom(string)
     + set_adresse(string)
     + set_code(int)
     + Bibliotheque(string nom, string adresse, int code)
+    
 }
 
 class Adherent {
@@ -35,9 +39,9 @@ class Adherent {
     - string adresse
     - int numero_adherent
     - string bibliotheque_d_inscription
-    - List livres_empruntes
     + emprunter_livre(livre)
     + rendre_livre(livre)
+    + adherent(string nom, string prenom, string adresse, string bibliotheque_d_inscription)
 }
 
 class Livre {
