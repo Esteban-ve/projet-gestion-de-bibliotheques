@@ -28,6 +28,8 @@ void Adherent::emprunter_livre(livre* l) {
         livres_empruntes[nb_emprunts++] = l;
         std::cout << nom << " a emprunté : ";
         l->afficher();
+        l->set_libre(false);
+        l->set_prete(true);
     } else {
         std::cout << nom << " a atteint le nombre maximal de livres empruntés." << std::endl;
     }
@@ -38,7 +40,8 @@ void Adherent::rendre_livre(livre* l) {
         if(livres_empruntes[i] == l) {
             std::cout << nom << " a rendu : ";
             l->afficher();
-            // Décaler le tableau
+            l->set_libre(true);
+            l->set_prete(false);
             for(int j = i; j < nb_emprunts - 1; j++) {
                 livres_empruntes[j] = livres_empruntes[j+1];
             }

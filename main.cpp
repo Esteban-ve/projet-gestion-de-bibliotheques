@@ -39,37 +39,36 @@ int main() {
     bibliotheque_de_centrale.afficher_livres();
 
     // l'adhérent1 emprunte des livres
+    cout << "\n L'adherent1 emprunte deux livres \n";
     adherent1.emprunter_livre(album1);
     adherent1.emprunter_livre(roman1);
 
     // on vérifie que les livres ne sont plus dans la bibliothèque 
+    cout << "\n Inventaire après l'emprunt des livres de la Centrale \n";
     bibliotheque_de_centrale.afficher_livres();
 
     // L'adhérent rend un livre
     adherent1.rendre_livre(album1);
 
     // On réaffiche les livres dans la bibliothèque
-    bibliotheque_de_centrale.afficher_livres();
-
-    // Suppression: on supprime le livre qui n'a pas été rendu + le theatre qu'on aime plus
-    bibliotheque_de_centrale.detruire_livre(theatre1); // on l'aime plus
-    bibliotheque_de_centrale.detruire_livre(roman1); // on le considère perdu
-
-    // L'adhérent rend un livre
-    adherent1.rendre_livre(album1);
-
-    // On réaffiche les livres dans la bibliothèque
+    cout << "\n Inventaire juste après que l'adherent à rendu un livre de Centrale \n";
     bibliotheque_de_centrale.afficher_livres();
 
     // Suppression
     bibliotheque_de_centrale.detruire_livre(theatre1); // on l'aime plus
     bibliotheque_de_centrale.detruire_livre(roman1);   // on le considère perdu
-
-    // On vérifie les livres présents
-    cout << "\n Inventaire final des livres de la Centrale \n";
+    cout << "\n Inventaire juste après que la bibliotheque est supprimé le livre non rendu car considéré comme perdu + on en supprime un autre car on l'aime pas\n";
     bibliotheque_de_centrale.afficher_livres();
 
-    cout << "\n Inventaire final des livres de Saint Charles \n";
+    // emprunt par Saint Charles
+     cout << "\n on fait un emprunt entre bibliotheques\n";
+    bibliotheque_saint_charles.emprunter_livre(1, bibliotheque_de_centrale);
+
+    // On vérifie les livres présents
+    cout << "\n Inventaire après l'échange des livres de la Centrale \n";
+    bibliotheque_de_centrale.afficher_livres();
+
+    cout << "\n Inventaire après l'échange des livres de Saint Charles \n";
     bibliotheque_saint_charles.afficher_livres();
 
     cout << "\n Fin du main\n";

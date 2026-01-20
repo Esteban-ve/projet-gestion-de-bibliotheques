@@ -84,7 +84,7 @@ void Bibliotheque::afficher_livres() const {
 
 bool Bibliotheque::emprunter_livre(int code_livre, Bibliotheque& autre)
 {
-    livre* l = this->get_livre(code_livre);
+    livre* l = autre.get_livre(code_livre);
     if (!l) {
         cout << "Livre introuvable dans cette bibliothèque." << endl;
         return false;
@@ -96,11 +96,11 @@ bool Bibliotheque::emprunter_livre(int code_livre, Bibliotheque& autre)
     }
 
     // livre disponible : on le marque
-    l->set_libre(false);
+    l->set_libre(true);
     l->set_prete(true);
 
     // on le transfère dans l’autre biblio
-    autre.ajouter_livre(l, *this);
+    this->ajouter_livre(l, autre);
 
     cout << "Livre code " << code_livre << " emprunté puis transféré vers " << autre.get_nom() << endl;
     return true;
