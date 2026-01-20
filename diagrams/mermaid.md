@@ -24,12 +24,11 @@ classDiagram
     +get_nom(): string
     +get_adresse(): string
     +get_code(): int
-    +get_list_livre(): List~livre
+    +get_livre(int index): List~livre
 
     +set_nom(string): void
     +set_adresse(string): void
     +set_code(int): void
-    +set_list_livre(List~livre): void
 
     +bibliotheque(string nom, string adresse, int code, List~int list_livres):void
     }
@@ -41,6 +40,9 @@ classDiagram
       -int numero_adherent
       -string bibliotheque_d_inscription
       -List~Livre 
+
+      +emprunter_livre(livre);
+      +rendre_livre(livre);
     }
 
     class Livre{

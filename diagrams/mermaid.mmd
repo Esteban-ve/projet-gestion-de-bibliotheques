@@ -1,0 +1,101 @@
+classDiagram
+
+Bibliotheque ..> Livre
+Bibliotheque ..> Adherent
+
+Livre ..|> Album
+Livre ..|> Theatre
+Livre ..|> Roman
+Livre ..|> Poesie
+Livre ..|> Bande_dessinee
+
+class Bibliotheque {
+    - string nom
+    - string adresse
+    - int code
+    - List list_livres
+    + acheter_livre(livre)
+    + detruire_livre(livre)
+    + afficher_livre()
+    + emprunter_livre(livre)
+    + rendre_livre()
+    + get_nom()
+    + get_adresse()
+    + get_code()
+    + get_livre(int index)
+    + set_nom(string)
+    + set_adresse(string)
+    + set_code(int)
+    + Bibliotheque(string nom, string adresse, int code)
+}
+
+class Adherent {
+    - string nom
+    - string prenom
+    - string adresse
+    - int numero_adherent
+    - string bibliotheque_d_inscription
+    - List livres_empruntes
+    + emprunter_livre(livre)
+    + rendre_livre(livre)
+}
+
+class Livre {
+    - int code
+    - int isbn
+    - string auteur
+    - string titre
+    - string editeur
+    - string publique
+    - bool libre
+    - bool prete
+    - string bibliotheque_d_origine
+    + get_code()
+    + get_isbn()
+    + get_auteur()
+    + get_titre()
+    + get_editeur()
+    + get_public()
+    + get_libre()
+    + get_prete()
+    + get_bibliotheque_d_origine()
+    + set_code(int)
+    + set_isbn(int)
+    + set_auteur(string)
+    + set_titre(string)
+    + set_editeur(string)
+    + set_public(string)
+    + set_libre(bool)
+    + set_prete(bool)
+    + set_bibliotheque_d_origine(string)
+}
+
+class Album {
+    - string illustration
+    + get_illustration()
+    + set_illustration(string)
+}
+
+class Theatre {
+    - int siecle
+    + get_siecle()
+    + set_siecle(int)
+}
+
+class Roman {
+    - string genre
+    + get_genre()
+    + set_genre(string)
+}
+
+class Poesie {
+    - string indicateur
+    + get_indicateur()
+    + set_indicateur(string)
+}
+
+class Bande_dessinee {
+    - string dessinateur
+    + get_dessinateur()
+    + set_dessinateur(string)
+}
