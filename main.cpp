@@ -15,6 +15,10 @@ int main() {
     // Création de bibliothèques (c'est bien comme début)
     Bibliotheque bibliotheque_de_centrale("Bibliothèque de Centrale", "1 Rue Julio Curry Centrale", 1);
     Bibliotheque bibliotheque_cannebiere("Bibliothèque de Cannebiere", "50 Bd Cannebiere", 2);
+    Bibliotheque bibliotheque_saint_charles("Bibliothèque Saint Charles", "234 Bd Saint Charles", 2);
+    
+    // tableau statique des bibliothèques, dont on aura besoin pour faire les emprunts de livre entre bibliothèques
+    Bibliotheque* liste_biblios[3] = { bibliotheque_de_centrale*, bibliotheque_cannebiere*, bibliotheque_saint_charles* };
 
     // Création des livres
     Album* album1 = new Album(1, 26271, "Antoine de Saint-Exupéry", "Le Petit Prince", "Gallimard", "Tout public", true, false, "Bibliothèque de Centrale", "des illustrations");
@@ -40,6 +44,7 @@ int main() {
     // l'adhérent1 emprunte des livres
     adherent1.emprunter_livre(album1);
     adherent1.emprunter_livre(roman1);
+    
     // on vérifie que les livres ne sont plus dans la bibliothèque 
     bibliotheque_de_centrale.afficher_livres();
 
@@ -52,6 +57,9 @@ int main() {
     // Suppression: on supprime le livre qui n'a pas été rendu + le theatre qu'on aime plus
     bibliotheque_de_centrale.detruire_livre(theatre1); // on l'aime plus
     bibliotheque_de_centrale.detruire_livre(roman1); // on le considère perdu
+
+    // emprunt du livre biblios
+    biblio1->emprunter_livre(1, *biblio3);
 
     return 0;
 }

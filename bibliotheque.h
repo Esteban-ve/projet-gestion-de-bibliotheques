@@ -5,14 +5,14 @@
 #include "livre.h"
 using namespace std;
 
-const int MAX_LIVRES = 5;
+const int MAX_LIVRES_BIBLIOTHEQUE = 5;
 
 class Bibliotheque {
 private:
     string nom;
     string adresse;
     int code;
-    livre* list_livres[MAX_LIVRES];
+    livre* list_livres[MAX_LIVRES_BIBLIOTHEQUE];
     int nb_livres;
 
 public:
@@ -32,8 +32,12 @@ public:
 
     // Méthodes
     void acheter_livre(livre* l);
+    void ajouter_livre(livre* l, Bibliotheque& autre);
     void detruire_livre(livre* l);
     void afficher_livres() const;
+    bool emprunter_livre(int code_livre, Bibliotheque& autre);
+    bool emprunter_livre_global(int code_livre, Bibliotheque* biblios[], int nb_biblios);
+
 };
 
 #endif
